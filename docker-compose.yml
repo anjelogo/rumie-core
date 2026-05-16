@@ -1,6 +1,8 @@
 services:
   api:
+    image: ghcr.io/anjelogo/rumie-core:${IMAGE_TAG:-latest}
     build: .
+    pull_policy: always
     env_file: .env
     depends_on:
       mongodb:
